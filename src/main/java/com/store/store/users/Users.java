@@ -1,6 +1,13 @@
 package com.store.store.users;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Users")
 public class Users {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
     private String name;
     private String email;
