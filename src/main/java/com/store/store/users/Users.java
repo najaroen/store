@@ -3,15 +3,19 @@ package com.store.store.users;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "UserCustomer")
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "email")
     private String email;
+    @Column(name = "phone")
     private String phone;
+    @Column(name = "age")
     private Integer age;
 
     public Users() {
