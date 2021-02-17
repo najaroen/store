@@ -1,9 +1,7 @@
 package com.store.store.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +18,16 @@ public class UsersController {
     @GetMapping
     public List<Users> getUsers() {
         return usersServices.getUsers();
+    }
+
+    @PostMapping
+    public void createUserCustomer(@RequestBody Users users) {
+        usersServices.createUserCustomer(users);
+    }
+
+    @DeleteMapping(path = "{UserId}")
+    public void deleteUserCustomer(@PathVariable("UserId") Long id){
+            System.out.println(id);
+            usersServices.deleteUserCustomer(id);
     }
 }
